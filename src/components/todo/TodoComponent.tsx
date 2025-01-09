@@ -6,13 +6,15 @@ interface IProps {
 }
 
 const TodoComponent: FC<IProps> = ({ item }) => {
+    const lineStyle = item.completed ? 'line-through' : '';
+    const completeStyle = item.completed ? 'text-green-500 ' : 'text-red-600';
+    const completeText = item.completed ? 'done' : 'undone';
+
     return (
         <div>
-            <div className={`${(item.completed) ? 'line-through' : ''}`}>{item.id}. {item.todo} -
-                <span
-                    className={`${item.completed ? 'text-green-500 ml-0' : 'text-red-600 ' } ml-1 font-bold`}
-                >{item.completed ? 'done' : 'undone'}
-                </span>
+            <div className={lineStyle}>
+                {item.id}. {item.todo} -
+                <span className={`${completeStyle} font-bold`}> {completeText}</span>
             </div>
         </div>
     );

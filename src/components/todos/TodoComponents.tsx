@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {ITodo} from "../../models/ITodo.ts";
-import {getPaginatedTodos} from "../../services/api.service.ts";
+import {getPaginatedTodos} from "../../services/todo.service.ts";
 import TodoComponent from "../todo/TodoComponent.tsx";
 
 
@@ -9,8 +9,8 @@ const TodoComponents = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await getPaginatedTodos();
-            setTodos(response.todos)
+            const { todos } = await getPaginatedTodos();
+            setTodos(todos)
         }
 
         fetchData();
