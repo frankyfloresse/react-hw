@@ -1,9 +1,9 @@
-import TodoComponent from "../todo/TodoComponent.tsx";
+import Todo from "../todo/Todo.tsx";
 import {useEffect, useState} from "react";
 import {ITodo} from "../../models/ITodo.ts";
 import {todoService} from "../../services/api.service.ts";
 
-const TodoComponents = () => {
+const Todos = () => {
     const [todos, setTodos] = useState<ITodo[]>([]);
 
     useEffect(() => {
@@ -19,10 +19,10 @@ const TodoComponents = () => {
     return (
         <div>
             {
-                todos.map(item =><TodoComponent key={item.id} item={item} /> )
+                todos.map(item =><Todo key={item.id} item={item} /> )
             }
         </div>
     );
 };
 
-export default TodoComponents;
+export default Todos;
