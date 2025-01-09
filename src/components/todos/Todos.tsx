@@ -1,7 +1,7 @@
 import Todo from "../todo/Todo.tsx";
 import {useEffect, useState} from "react";
 import {ITodo} from "../../models/ITodo.ts";
-import {todoService} from "../../services/api.service.ts";
+import {todoService} from "../../services/todo.service.ts";
 
 const Todos = () => {
     const [todos, setTodos] = useState<ITodo[]>([]);
