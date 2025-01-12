@@ -1,12 +1,12 @@
-import UsersPage from "./pages/UsersPage.tsx";
-import {Outlet} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 
 
 function App() {
 
   return (
       <>
-          <UsersPage />
+          <Link to={'/users'}>Users</Link>
+          <hr/>
           <Outlet />
       </>
   )
