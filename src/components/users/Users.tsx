@@ -5,6 +5,8 @@ import {userService} from "../../services/user.service.ts";
 import User from "../user/User.tsx";
 import Pagination from "../pagination/Pagination.tsx";
 
+const LIMIT = 9;
+
 const Users = () => {
    const [query] = useSearchParams();
     const [users, setUsers] = useState<IUser[]>([]);
@@ -12,8 +14,8 @@ const Users = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const { users, total, limit } = await userService.getAllUsers(query.get('page') || '1');
-            setMaxPage(Math.ceil(total / limit));
+            const { users, total } = await userService.getAllUsers(query.get('page') || '1', LIMIT);
+            setMaxPage(Math.ceil(total / LIMIT));
             setUsers(users);
         }
 
