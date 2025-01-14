@@ -5,7 +5,7 @@ import {userService} from "../../services/user.service.ts";
 import User from "../user/User.tsx";
 import Pagination from "../pagination/Pagination.tsx";
 
-const LIMIT = 9;
+const LIMIT = 6;
 
 const Users = () => {
    const [query] = useSearchParams();
