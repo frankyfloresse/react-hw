@@ -24,11 +24,10 @@ const Users = () => {
     }, [query]);
 
     return (
-        <div>
-            {
-                users.map(user => <User key={user.id} user={user} />)
-            }
-
+        <div className={'flex flex-col items-center'}>
+            <div className={"grid grid-cols-3 gap-10"}>
+                {users.map(user => <User key={user.id} user={user}/>)}
+            </div>
             <Pagination maxPage={maxPage} />
         </div>
     );

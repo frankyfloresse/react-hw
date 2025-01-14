@@ -7,7 +7,7 @@ interface IProps {
 
 const User: FC<IProps> = ({ user }) => {
     return (
-        <div>
+        <div className={'flex flex-col items-center'}>
             <div>{user.id}. {user.firstName} {user.lastName}</div>
             <div>Username: {user.username}</div>
             <img src={user.image} alt={user.username}/>

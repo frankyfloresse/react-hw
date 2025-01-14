@@ -22,9 +22,8 @@ const Pagination: FC<IProps> = ({ maxPage }) => {
    }
 
     return (
-        <div>
+        <div className={'mt-5 flex gap-3'}>
             <button onClick={() =>{updatePage(-1)}}>prev</button>
-
             <button onClick={() => {updatePage(1)}}>next</button>
         </div>
     );
